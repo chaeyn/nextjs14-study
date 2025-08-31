@@ -23,8 +23,11 @@ export default async function HomePage() {
         title={randomMovie.title}
         overview={randomMovie.overview}
       />
-      <div className='relative z-20' style={{ pointerEvents: 'none' }}>
-        <div className='grid grid-cols-5 gap-6 max-w-[90%] w-full mx-auto relative top-[520px] pb-24' style={{ pointerEvents: 'auto' }}>
+      <div className='relative z-20' style={{ pointerEvents: "none" }}>
+        <div
+          className='grid grid-cols-5 gap-6 max-w-[90%] w-full mx-auto relative top-[520px] pb-24'
+          style={{ pointerEvents: "auto" }}
+        >
           {movies.map((movie) => (
             <Movie
               key={movie.id}
