@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { API_URL } from "../app/constants";
-import styles from "../styles/movie-info.module.css";
 
 export async function getMovie(id: string) {
   const response = await fetch(`${API_URL}/${id}`);
@@ -15,14 +14,14 @@ export default async function MovieInfo({ id }: { id: string }) {
   const movie = await getMovie(id);
   const credits = await getCredits(id);
   return (
-    <div className={styles.container}>
+    <div className='grid grid-cols-[1fr_2fr] gap-10 w-[80%] mx-auto'>
       <img
         src={movie.poster_path}
         alt={movie.title}
-        className={styles.poster}
+        className='rounded-lg max-w-[70%] place-self-center'
       />
-      <div className={styles.info}>
-        <h1 className={styles.title}>
+      <div className='flex flex-col gap-5 mt-10'>
+        <h1 className='text-white text-4xl font-semibold'>
           <Link href={movie.homepage} target='_blank'>
             {movie.title}
           </Link>
@@ -31,13 +30,13 @@ export default async function MovieInfo({ id }: { id: string }) {
         <p>{movie.overview}</p>
         <div>
           Genres: {movie.genres.map((genre) => genre.name).join(", ")}
-          <div className={styles.productionCompanies}>
+          <div className='flex flex-wrap gap-2 mt-2'>
             {movie.production_companies
               .filter((company) => company.logo_path !== null)
               .map((company) => (
-                <div key={company.id} className={styles.companyItem}>
+                <div key={company.id} className='flex items-center gap-1'>
                   <img
-                    className={styles.logo}
+                    className='h-10 w-auto object-contain bg-gray-400 p-1 rounded-sm'
                     src={`https://image.tmdb.org/t/p/w300${company.logo_path}`}
                     alt={company.name}
                   />
@@ -46,11 +45,11 @@ export default async function MovieInfo({ id }: { id: string }) {
           </div>
         </div>
         <h3>Top Credits</h3>
-        <div className={styles.credits}>
+        <div className='flex gap-2 flex-wrap'>
           {credits.slice(0, 6).map((credit) => (
-            <div key={credit.id} className={styles.creditItem}>
+            <div key={credit.id} className='flex flex-col items-center gap-1'>
               <img
-                className={styles.creditLogo}
+                className='h-30 w-auto object-contain rounded-sm'
                 src={`https://image.tmdb.org/t/p/w300${credit.profile_path}`}
                 alt={credit.name}
               />

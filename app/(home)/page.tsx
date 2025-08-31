@@ -1,5 +1,4 @@
 import Movie from "../../components/movie";
-import styles from "../../styles/home.module.css";
 import { API_URL } from "../constants";
 
 export const metadata = {
@@ -15,7 +14,7 @@ async function getMovies() {
 export default async function HomePage() {
   const movies = await getMovies();
   return (
-    <div className={styles.container}>
+    <div className='grid grid-cols-5 gap-6 max-w-[90%] w-full mx-auto'>
       {movies.map((movie) => (
         <Movie
           key={movie.id}
