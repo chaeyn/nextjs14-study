@@ -13,6 +13,7 @@
   "description": "",
   "dependencies": {
     "@tailwindcss/postcss": "^4.1.12",
+    "classnames": "^2.5.1",
     "next": "^14.2.21",
     "postcss": "^8.5.6",
     "react": "^18.3.1",

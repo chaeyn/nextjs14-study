@@ -14,7 +14,7 @@ export default async function MovieVideos({ id }: { id: string }) {
           className='rounded-lg opacity-80 transition-opacity duration-200 ease-in-out hover:opacity-100'
           key={video.id}
           src={`https://youtube.com/embed/${video.key}`}
-          allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+          allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope'
           allowFullScreen
           title={video.name}
         />
