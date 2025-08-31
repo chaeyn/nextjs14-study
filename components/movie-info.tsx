@@ -14,7 +14,7 @@ export default async function MovieInfo({ id }: { id: string }) {
   const movie = await getMovie(id);
   const credits = await getCredits(id);
   return (
-    <div className='grid grid-cols-[1fr_2fr] gap-10 w-[80%] mx-auto'>
+    <div className='grid grid-cols-[1fr_2fr] gap-10 w-[80%] mx-auto mt-6'>
       <img
         src={movie.poster_path}
         alt={movie.title}

@@ -1,7 +1,6 @@
 @import "tailwindcss";
 
 body {
-  padding-top: 150px;
   font-family: system-ui;
   color: white;
   background-color: black;

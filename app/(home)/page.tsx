@@ -14,7 +14,7 @@ async function getMovies() {
 export default async function HomePage() {
   const movies = await getMovies();
   return (
-    <div className='grid grid-cols-5 gap-6 max-w-[90%] w-full mx-auto'>
+    <div className='grid grid-cols-5 gap-6 max-w-[90%] w-full mx-auto mt-6'>
       {movies.map((movie) => (
         <Movie
           key={movie.id}

@@ -8,7 +8,7 @@ async function getVideos(id: string) {
 export default async function MovieVideos({ id }: { id: string }) {
   const videos = await getVideos(id);
   return (
-    <div className='w-[80%] mx-auto grid md:grid-cols-3 lg:grid-cols-4 gap-5 mt-[100px] pb-[100px]'>
+    <div className='w-[80%] mx-auto grid md:grid-cols-3 lg:grid-cols-4 gap-5 mt-10 pb-[100px]'>
       {videos.map((video) => (
         <iframe
           className='rounded-lg opacity-80 transition-opacity duration-200 ease-in-out hover:opacity-100'

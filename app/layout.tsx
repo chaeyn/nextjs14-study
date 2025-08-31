@@ -15,7 +15,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <html lang='en'>
       <body>
         <Navigation />
-        {children}
+        <main className='pt-20'>{children}</main>
       </body>
     </html>
   );
